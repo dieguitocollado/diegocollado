@@ -7,6 +7,26 @@
   <title>diegocollado</title>
   <meta name="description" content="hola soy diego">
   <meta name="author" content="diego">
+	
+<!--[if IE]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script type="text/javascript">
+var numberOfSongs = 2
+var sound = new Array(numberOfSongs+1)
+sound[0]= "http://k003.kiwi6.com/hotlink/vwwqpjsyue/yaz.mp3"
+sound[1]= "http://k003.kiwi6.com/hotlink/lpzy1dm0t6/yaz2.mp3"
+sound[2]= "http://k003.kiwi6.com/hotlink/lrwts5q4ka/beverly.mp3"
+function randomNumber(){
+var randomLooper = -1
+while (randomLooper < 0 || randomLooper > numberOfSongs || isNaN(randomLooper)){ randomLooper = parseInt(Math.random()*(numberOfSongs+1))
+}
+return randomLooper
+}
+var randomsub = randomNumber()
+var soundFile = sound[randomsub]
+document.write ('<audio loop autoplay><source src="' + soundFile + '" type="audio/mpeg">Your browser does not support the audio element.</audio>' )
+</script>
 
 <style type="text/css">
 .bg
@@ -105,6 +125,9 @@ z-index: -5;
     margin-right: -50%;
     transform: translate(-50%, -50%)
  
+}
+audio { 
+   display:none;
 }
 .text
 {
@@ -286,7 +309,7 @@ z-index: -1;
 .tree {
      position: absolute;
     left: -50px;
-    bottom: 5px;
+    bottom: 30px;
     height: 150px;
 	width: 793px;
 	-moz-transform: scaleX(-1);
@@ -306,12 +329,6 @@ z-index: -1;
 </head>
 
 <body>
-
-<audio controls loop autoplay="true">
-  <source src="http://k003.kiwi6.com/hotlink/vwwqpjsyue/yaz.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
-
  
 <body style="background-color:black;">
   <div id="space">
@@ -337,7 +354,7 @@ z-index: -1;
     <br>
     <br>
   <div class="link1">
-    <a class="link1" href="https://youtube.com/diegosvfx" target="_blank"><span style="color:#FF1493; font-family: Arial ">videos</span></a>
+    <a class="link1" href="https://youtube.com/diegosvfx" target="_blank"><span style="color:#FF1493; font-family: Arial ">vídeos</span></a>
     </div>
   <div class="link2">
     <a class="link2" href="ego.html"><span style="color:#00FF00; font-family: Impact">ego</span></a>
@@ -349,7 +366,7 @@ z-index: -1;
 		<img src="blob.gif" height="180">
 	</div>
 	<div class="tree">
-		<img src="tree.gif" height="150">
+		<img src="tree.gif" height="190">
 	</div>
 </div>
 
