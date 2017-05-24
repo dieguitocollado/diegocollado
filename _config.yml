@@ -9,7 +9,7 @@ author_name:        "diego" # Your name here
 author_email:       diego@diegocollado.net # Your email here
 
 # Site Settings
-baseurl:            "" # Base URL must end WITHOUT a slash, default: ""
+baseurl:            "/blog" # Base URL must end WITHOUT a slash, default: ""
 production_url : http://enragedjam.github.io.com/diegocollado
 BASE_PATH : http://diegocollado.net
 permalink:          /notes/:title # Post permalink
