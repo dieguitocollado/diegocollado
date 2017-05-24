@@ -284,6 +284,54 @@ a {
  }
 }
 
+.link3
+{
+  font-size: 130%;
+  font-weight: 900;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  position: absolute;
+  z-index: 1;
+
+
+  text-align: right;
+  vertical-align: text-top;
+  position: absolute;
+    top: 30%;
+    left: 20%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+
+ /* Starting position */
+ -webkit-transform:translateX(0%);	
+ -moz-transform:translateX(0%);
+ transform:translateX(0%);
+ /* Apply animation to this element */	
+ -moz-animation: bouncing-text 5s linear infinite alternate;
+ -webkit-animation: bouncing-text 5s linear infinite alternate;
+ animation: bouncing-text 5s linear infinite alternate;
+}
+/* Move it (define the animation) */
+@-moz-keyframes bouncing-text {
+ 0%   { -moz-transform: translateX(0%); }
+ 100% { -moz-transform: translateX(-90%); }
+}
+@-webkit-keyframes bouncing-text {
+ 0%   { -webkit-transform: translateX(0%); }
+ 100% { -webkit-transform: translateX(-90%); }
+}
+@keyframes bouncing-text {
+ 0%   { 
+ -moz-transform: translateX(0%); /* Browser bug fix */
+ -webkit-transform: translateX(0%); /* Browser bug fix */
+ transform: translateX(0%); 		
+ }
+ 100% { 
+ -moz-transform: translateX(-90%); /* Browser bug fix */
+ -webkit-transform: translateX(-90%); /* Browser bug fix */
+ transform: translateX(-90%); 
+ }
+}
+
 .fuego {
      position: absolute;
     left: 0;
@@ -358,6 +406,9 @@ z-index: -1;
     </div>
   <div class="link2">
     <a class="link2" href="ego.html"><span style="color:#00FF00; font-family: Impact">ego</span></a>
+    </div>
+ <div class="link3">
+    <a class="link3" href="investigacion.html"><span style="color:#00ced1;">preguntas existenciales</span></a>
     </div>
 	<div class="fuego">
 	
