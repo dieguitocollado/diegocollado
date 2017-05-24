@@ -197,11 +197,31 @@ a {
 	background-repeat:repeat-x;
 
 }
+.blob {
+     position: absolute;
+    left: 20px;
+    bottom: 25px;
+    height: 100px;
+	width: 793px;
 
-.fuego img {
-   
 	
+
 }
+
+.tree {
+     position: absolute;
+    left: -50px;
+    bottom: 5px;
+    height: 150px;
+	width: 793px;
+	-moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: FlipH;
+        -ms-filter: "FlipH";
+}
+
 
 </style>
   <!--[if lt IE 9]>
@@ -242,6 +262,12 @@ a {
     </div>
 	<div class="fuego">
 	
+	</div>
+	<div class="blob">
+		<img src="blob.gif" height="120">
+	</div>
+	<div class="tree">
+		<img src="tree.gif" height="150">
 	</div>
 </div>
 
