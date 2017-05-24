@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8">
 
-  <title>quien soy - diegocollado</title>
-  <meta name="description" content="yo">
+  <title>siiiiiiii - diegocollado</title>
+  <meta name="description" content="si">
   <meta name="author" content="diego">
 
 
@@ -13,11 +13,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
   <![endif]-->
 </head>
-<style>
-body {
-    background-color: black;
-}
 
+<style>
 .wrapper { 
   height: 100%;
   width: 100%;
@@ -27,14 +24,13 @@ body {
   bottom: 0;
   position: absolute;
   z-index: -1;
-  
 background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
 background-size: 1800% 1800%;
 
--webkit-animation: rainbow 18s ease infinite;
--z-animation: rainbow 18s ease infinite;
--o-animation: rainbow 18s ease infinite;
-  animation: rainbow 18s ease infinite;}
+-webkit-animation: rainbow 1s ease infinite;
+-z-animation: rainbow 1s ease infinite;
+-o-animation: rainbow 1s ease infinite;
+  animation: rainbow 1s ease infinite;}
 
 @-webkit-keyframes rainbow {
     0%{background-position:0% 82%}
@@ -57,23 +53,25 @@ background-size: 1800% 1800%;
     100%{background-position:0% 82%}
 }
 
+.video {
+    max-height: 100%;
+    max-width: 100%;
+	left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+	z-index: 1;
 
+}
 
-.yo {
-  position: absolute;
-   top: 50%;
-   left: 50%;
-   width: 322px;
-   height: 322px;
-   margin-top: -161px; /* Half the height */
-   margin-left: -161px; /* Half the width */
-  z-index: 1;
+video {
+    object-fit: contain;
 }
 
 a {
 	text-align: center;
 	font-family: "Times New Roman", Georgia, Serif;
-	font-size: 120%;
+	font-size: 200%;
 
 }	
 a:link {
@@ -93,18 +91,17 @@ a:visited {
     text-decoration: none;
 }
 
-
-
 </style>
+
 <body>
   <script src="js/scripts.js"></script>
-  
-  
-  <div class="wrapper">
-  </div>
-  <div class="yo">
-  <a href="si.html"><img class="img2" src="http://i.imgur.com/etVprYI.jpg"> </a>
-  <br>
+  <div class="wrapper"></div>
+  <div class="video">
+<video autoplay name="media">
+  <source src="https://s1.webmshare.com/DxdxX.webm" type="video/webm">
+
+Your browser does not support the video tag.
+</video>
 <br>
 <br>
 <br>
@@ -113,8 +110,8 @@ a:visited {
 <br>
 <br>
 <br>
-<a href="index.html">volver</a>
-  </div>
-  
+<br>
+<a href="yo.html">volver</a>
+</div>
 </body>
 </html>

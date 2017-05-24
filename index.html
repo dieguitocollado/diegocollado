@@ -124,7 +124,7 @@ z-index: -5;
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%)
- 
+	
 }
 audio { 
    display:none;
@@ -143,6 +143,7 @@ line-height: 800px;
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%)
+	
 }
 
 .link1
@@ -369,6 +370,50 @@ z-index: -1;
         -ms-filter: "FlipH";
 z-index: -1;
 		}
+		
+
+
+
+
+.link4 {
+ height: 800px;	
+ overflow: hidden;
+font-family: Papyrus,fantasy;
+font-weight: 900;
+ position: absolute;
+ width: 100%;
+ height: 100%;
+ margin: 0;
+ line-height: 50px;
+ text-align: right;
+ font-size: 350%;
+ z-index: 2;
+ /* Apply animation to this element */	
+ -moz-animation: link4 5s linear infinite alternate;
+ -webkit-animation: link4 5s linear infinite alternate;
+ animation: link4 5s linear infinite alternate;
+}
+/* Move it (define the animation) */
+@-moz-keyframes link4 {
+ 0%   { -moz-transform: translateY(70%); }
+ 100% { -moz-transform: translateY(0%); }
+}
+@-webkit-keyframes link4 {
+ 0%   { -webkit-transform: translateY(70%); }
+ 100% { -webkit-transform: translateY(0%); }
+}
+@keyframes link4 {
+ 0%   { 
+ -moz-transform: translateY(70%); /* Firefox bug fix */
+ -webkit-transform: translateY(70%); /* Firefox bug fix */
+ transform: translateY(70%); 		
+ }
+ 100% { 
+ -moz-transform: translateY(0%); /* Firefox bug fix */
+ -webkit-transform: translateY(0%); /* Firefox bug fix */
+ transform: translateX(0%); 
+ }
+}
 
 
 </style>
@@ -410,6 +455,9 @@ z-index: -1;
     </div>
  <div class="link3">
     <a class="link3" href="investigacion.html"><span style="color:#00ced1;">preguntas existenciales</span></a>
+    </div>
+ <div class="link4">
+    <a class="link" href="yo.html"><span style="color:#cc9900;">quien soy</span></a>
     </div>
 	<div class="fuego">
 	
