@@ -7,26 +7,24 @@
   <title>diegocollado</title>
   <meta name="description" content="hola soy diego">
   <meta name="author" content="diego">
+	
 <!--[if IE]>
 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
-
 <script type="text/javascript">
-function play()
-{
-var a = Math.random()*2;
-a=Math.floor(a);
-
-if(a==1)
-{
-document.getElementById('soundtrack').innerHTML="<audio id='yaz1' loop autoplay><source src='http://k003.kiwi6.com/hotlink/vwwqpjsyue/yaz.mp3' type='audio/mpeg'>Your browser does not support the audio element.</audio>";
+var numberOfSongs = 2
+var sound = new Array(numberOfSongs+1)
+sound[0]= "http://k003.kiwi6.com/hotlink/vwwqpjsyue/yaz.mp3"
+sound[1]= "http://k003.kiwi6.com/hotlink/lpzy1dm0t6/yaz2.mp3"
+function randomNumber(){
+var randomLooper = -1
+while (randomLooper < 0 || randomLooper > numberOfSongs || isNaN(randomLooper)){ randomLooper = parseInt(Math.random()*(numberOfSongs+1))
 }
-if(a==0)
-{
-document.getElementById('soundtrack').innerHTML="<audio id='yaz2' loop autoplay><source src='http://k003.kiwi6.com/hotlink/lpzy1dm0t6/yaz2.mp3
-' type='audio/mpeg'>Your browser does not support the audio element.</audio>";
+return randomLooper
 }
-}
+var randomsub = randomNumber()
+var soundFile = sound[randomsub]
+document.write ('<audio controls><source src="' + soundFile + '" type="audio/mpeg">Your browser does not support the audio element.</audio>' )
 </script>
 
 <style type="text/css">
@@ -326,9 +324,7 @@ z-index: -1;
   <![endif]-->
 </head>
 
-<body onload="play()">;
-<div id="soundtrack">
-</div>
+<body>
  
 <body style="background-color:black;">
   <div id="space">
