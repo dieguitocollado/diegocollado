@@ -12,7 +12,7 @@ author_email:       diego@diegocollado.net # Your email here
 baseurl:            "" # Base URL must end WITHOUT a slash, default: ""
 production_url : http://enragedjam.github.io.com/diegocollado
 BASE_PATH : http://diegocollado.net
-permalink:          /notes/:title # Post permalink
+permalink:          /ego/:title # Post permalink
 timezone:           Europe/Madrid # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 mathjax:            true  # enables support for mathjax - set to false to disable
 
