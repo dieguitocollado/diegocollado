@@ -145,6 +145,7 @@ a {
   font-weight: bold;
   font-family: "Impact", Charcoal, sans-serif
   position: absolute;
+  z-index: 1;
 
 
   text-align: right;
@@ -195,7 +196,7 @@ a {
 	background-image: url("fire.gif-c200");
 	background-size: 80px;
 	background-repeat:repeat-x;
-
+z-index: -1;
 }
 .blob {
      position: absolute;
@@ -203,7 +204,7 @@ a {
     bottom: 25px;
     height: 100px;
 	width: 793px;
-
+z-index: -1;
 	
 
 }
@@ -220,7 +221,8 @@ a {
         transform: scaleX(-1);
         filter: FlipH;
         -ms-filter: "FlipH";
-}
+z-index: -1;
+		}
 
 
 </style>
