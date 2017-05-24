@@ -17,10 +17,7 @@
 body {
     background-color: black;
 }
-input {
-    width: 300px;
-height: 200px;
-}
+
 .form {
     margin: auto;
     width: 50%;
@@ -69,12 +66,14 @@ a:visited {
 <br>
 <br>
 <div class="form">
+	
 <form action="https://formspree.io/enragedjam@gmail.com" method="POST">
-    <input type="text" name="name">
+    <textarea name="message" placeholder="Your message"></textarea>
     <input type="submit" value="Send">
 	<input type="hidden" name="_next" value="/gracias.html" />
 	<input type="text" name="_gotcha" style="display:none" />
 </form>
+	</div>
 <br>
 <br>
 <br>
