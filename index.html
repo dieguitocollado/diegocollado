@@ -1,33 +1,348 @@
----
-layout: default
----
+<!doctype html>
 
-<section>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
 
-	{% for post in site.posts %}
-		{% unless post.next %}
-			<h3>{{ post.date | date: '%Y' }} &#172;</h3>
-		{% else %}
-			{% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
-			{% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
-			{% if year != nyear %}
-				<h3>{{ post.date | date: '%Y' }} &#172;</h3>
-			{% endif %}
-		{% endunless %}
+  <title>diegocollado</title>
+  <meta name="description" content="hola soy diego collado">
+  <meta name="author" content="diego">
 
-		<ul>
-			<li>
-				<div class="post-date">
-					<span>{{ post.date | date: "%b %d" }}
-					</span>
-					
-				</div>
-				<div class="title">
-					<a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-				</div>
-			</li>
-		</ul>
+<style type="text/css">
+.bg
+{
+    background: transparent url('text.png') left top repeat;
+    background-size: 15px 15px;
+    height: 795px;
+    width: 795px;
+   position:absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -400px; /*set to a negative number 1/2 of your height*/
+    margin-left: -400px; /*set to a negative number 1/2 of your width*/
+	z-index: -2;
 
-	{% endfor %}
+}
+/* Stars 
+------------------------------------- */
 
-</section>
+#space, .stars {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.stars {
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, #eee, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 40px 70px, #fff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 50px 160px, #ddd, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 90px 40px, #fff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 130px 80px, #fff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 160px 120px, #ddd, rgba(0,0,0,0));
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  animation: zoom 5s infinite;
+  opacity: 0;
+}
+
+.stars:nth-child(1) {
+  background-position: 50% 50%;
+  animation-delay: 0s;
+}
+.stars:nth-child(2) {
+  background-position: 20% 60%;
+  animation-delay: 1s;
+}
+.stars:nth-child(3) {
+  background-position: -20% -30%;
+  animation-delay: 2s;
+}
+.stars:nth-child(4) {
+  background-position: 40% -80%;
+  animation-delay: 3s;
+}
+.stars:nth-child(5) {
+  background-position: -20% 30%;
+  animation-delay: 4s;
+}
+
+@keyframes zoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+    animation-timing-function: ease-in;
+  } 
+  85% {
+    opacity: 1;
+    transform: scale(2.8);
+    animation-timing-function: linear;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(3.5);
+  }
+}
+.gif
+{
+ 
+ position: absolute;
+    top: 20%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+ 
+}
+.text
+{
+  font-size: 700%;
+  font-family: "Arial Black", Gadget, sans-serif;
+  color: white;
+  text-decoration: underline;
+  text-align: center;
+  vertical-align: middle;
+line-height: 800px;
+  position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+
+.link1
+{
+  font-size: 230%;
+  font-weight: 900;
+  font-family: "Comic Sans MS", cursive, sans-serif	
+  color: pink;
+  position: absolute;
+
+
+  text-align: left;
+  vertical-align: text-top;
+  position: absolute;
+    top:60%;
+    left: 40%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+
+   /* Starting position */
+ -moz-transform:translateX(50%);
+ -webkit-transform:translateX(50%);	
+ transform:translateX(50%);
+ /* Apply animation to this element */	
+ -moz-animation: bouncing-text 5s linear infinite alternate;
+ -webkit-animation: bouncing-text 5s linear infinite alternate;
+ animation: bouncing-text 5s linear infinite alternate;
+}
+/* Move it (define the animation) */
+@-moz-keyframes bouncing-text {
+ 0%   { -moz-transform: translateX(50%); }
+ 100% { -moz-transform: translateX(-50%); }
+}
+@-webkit-keyframes bouncing-text {
+ 0%   { -webkit-transform: translateX(50%); }
+ 100% { -webkit-transform: translateX(-50%); }
+}
+@keyframes bouncing-text {
+ 0%   { 
+ -moz-transform: translateX(50%); /* Browser bug fix */
+ -webkit-transform: translateX(50%); /* Browser bug fix */
+ transform: translateX(50%); 		
+ }
+ 100% { 
+ -moz-transform: translateX(-50%); /* Browser bug fix */
+ -webkit-transform: translateX(-50%); /* Browser bug fix */
+ transform: translateX(-50%); 
+ }
+}
+
+.text {
+   /* Chrome, Safari, Opera */
+  -webkit-animation: rainbow 1s infinite; 
+  
+  /* Internet Explorer */
+  -ms-animation: rainbow 1s infinite;
+  
+  /* Standar Syntax */
+  animation: rainbow 1s infinite; 
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes rainbow{
+	20%{color: red;}
+	40%{color: yellow;}
+	60%{color: green;}
+	80%{color: blue;}
+	100%{color: orange;}	
+}
+/* Internet Explorer */
+@-ms-keyframes rainbow{
+	20%{color: red;}
+	40%{color: yellow;}
+	60%{color: green;}
+	80%{color: blue;}
+	100%{color: orange;}	
+}
+
+/* Standar Syntax */
+@keyframes rainbow{
+	20%{color: red;}
+	40%{color: yellow;}
+	60%{color: green;}
+	80%{color: blue;}
+	100%{color: orange;}	
+}
+
+
+a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.link2
+{
+  font-size: 250%;
+  font-weight: bold;
+  font-family: "Impact", Charcoal, sans-serif
+  position: absolute;
+  z-index: 1;
+
+
+  text-align: right;
+  vertical-align: text-top;
+  position: absolute;
+    top: 75%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+
+ /* Starting position */
+ -moz-transform:translateX(0%);
+ -webkit-transform:translateX(0%);	
+ transform:translateX(0%);
+ /* Apply animation to this element */	
+ -moz-animation: bouncing-text 5s linear infinite alternate;
+ -webkit-animation: bouncing-text 5s linear infinite alternate;
+ animation: bouncing-text 5s linear infinite alternate;
+}
+/* Move it (define the animation) */
+@-moz-keyframes bouncing-text {
+ 0%   { -moz-transform: translateX(0%); }
+ 100% { -moz-transform: translateX(-90%); }
+}
+@-webkit-keyframes bouncing-text {
+ 0%   { -webkit-transform: translateX(0%); }
+ 100% { -webkit-transform: translateX(-90%); }
+}
+@keyframes bouncing-text {
+ 0%   { 
+ -moz-transform: translateX(0%); /* Browser bug fix */
+ -webkit-transform: translateX(0%); /* Browser bug fix */
+ transform: translateX(0%); 		
+ }
+ 100% { 
+ -moz-transform: translateX(-90%); /* Browser bug fix */
+ -webkit-transform: translateX(-90%); /* Browser bug fix */
+ transform: translateX(-90%); 
+ }
+}
+
+.fuego {
+     position: absolute;
+    left: 0;
+    bottom: 0px;
+    height: 76px;
+	width: 793px;
+	background-image: url("fire.gif-c200");
+	background-size: 80px;
+	background-repeat:repeat-x;
+z-index: -1;
+}
+.blob {
+     position: absolute;
+    left: 20px;
+    bottom: 80px;
+    height: 100px;
+	width: 793px;
+z-index: -1;
+	
+
+}
+
+.tree {
+     position: absolute;
+    left: -50px;
+    bottom: 5px;
+    height: 150px;
+	width: 793px;
+	-moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: FlipH;
+        -ms-filter: "FlipH";
+z-index: -1;
+		}
+
+
+</style>
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+
+<audio controls loop autoplay="true">
+  <source src="http://k003.kiwi6.com/hotlink/vwwqpjsyue/yaz.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+  <script src="js/scripts.js"></script>
+<body style="background-color:black;">
+  <div id="space">
+  <div class="stars"></div>
+  <div class="stars"></div>
+  <div class="stars"></div>
+  <div class="stars"></div>
+  <div class="stars"></div>
+</div>
+<div class="bg">
+  <div class="gif">
+    <img src="gif.gif" height="100">
+  </div>
+  <div class="text">
+    BIENVENIDO
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+  
+    <br>
+    <br>
+    <br>
+  <div class="link1">
+    <a class="link1" href="https://youtube.com/diegosvfx" target="_blank"><span style="color:#FF1493; font-family: Arial ">videos</span></a>
+    </div>
+  <div class="link2">
+    <a class="link2" href="ego.html"><span style="color:#00FF00; font-family: Impact">ego</span></a>
+    </div>
+	<div class="fuego">
+	
+	</div>
+	<div class="blob">
+		<img src="blob.gif" height="180">
+	</div>
+	<div class="tree">
+		<img src="tree.gif" height="150">
+	</div>
+</div>
+
+</div>  
+</body>
+</html>
