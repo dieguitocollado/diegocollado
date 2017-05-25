@@ -43,16 +43,16 @@
  width: 100%;
  height: 100%;
  margin: 0;
- line-height: 20px;
+ font-size: 200%;
  text-align: justify;
  /* Starting position */
  -moz-transform:translateY(100%);
  -webkit-transform:translateY(100%);	
  transform:translateY(100%);
  /* Apply animation to this element */	
- -moz-animation: scroll-up 120s linear infinite;
- -webkit-animation: scroll-up 120s linear infinite;
- animation: scroll-up 120s linear infinite;
+ -moz-animation: scroll-up 60s linear infinite;
+ -webkit-animation: scroll-up 60s linear infinite;
+ animation: scroll-up 60s linear infinite;
 }
 /* Move it (define the animation) */
 @-moz-keyframes scroll-up {
@@ -76,6 +76,102 @@
  }
 }
 
+div.a {
+
+position:fixed;
+
+}
+div.b {
+
+position:fixed;
+
+}
+div.c {
+
+position:fixed;
+
+    
+}
+
+.b {
+    opacity:0;  
+    animation: a 20s infinite;
+	-webkit-animation-delay: 14s; /* Safari 4.0 - 8.0 */
+    animation-delay: 14s;
+}
+
+@keyframes b {
+  0%   { opacity:1; }
+  50%  { opacity:0; }
+  100% { opacity:1; }
+}
+@-o-keyframes b{
+  0%   { opacity:1; }
+  50%  { opacity:0; }
+  100% { opacity:1; }
+}
+@-moz-keyframes b{
+  0%   { opacity:1; }
+  50%  { opacity:0; }
+  100% { opacity:1; }
+}
+@-webkit-keyframes b{
+  0%   { opacity:1; }
+  50%  { opacity:0; }
+  100% { opacity:1; }
+}
+.animate-flicker {
+
+   -webkit-animation: b 20s infinite;
+   -moz-animation: b 20s infinite;
+   -o-animation: b 20s infinite;
+    animation: b 20s infinite;
+}
+.b-wrp:hover .b 
+{
+    -webkit-animation-play-state: paused;
+    -moz-animation-play-state: paused;
+    -o-animation-play-state: paused;
+     animation-play-state: paused;
+}
+
+
+
+
+.c {
+    opacity:0;  
+    animation: a 26s infinite;
+	-webkit-animation-delay: 16s; /* Safari 4.0 - 8.0 */
+    animation-delay: 16s;
+}
+
+@keyframes c {
+  0%   { opacity:1; }
+  50%  { opacity:0; }
+  100% { opacity:1; }
+}
+@-o-keyframes c{
+  0%   { opacity:1; }
+  50%  { opacity:0; }
+  100% { opacity:1; }
+}
+@-moz-keyframes c{
+  0%   { opacity:1; }
+  50%  { opacity:0; }
+  100% { opacity:1; }
+}
+@-webkit-keyframes c{
+  0%   { opacity:1; }
+  50%  { opacity:0; }
+  100% { opacity:1; }
+}
+.animate-flicker {
+
+   -webkit-animation: c 26s infinite;
+   -moz-animation: c 26s infinite;
+   -o-animation: c 26s infinite;
+    animation: c 26s infinite;
+}
 
 .a {
     opacity:0;  
@@ -111,58 +207,75 @@
    -o-animation: a 16s infinite;
     animation: a 16s infinite;
 }
+.giftxt {
+    max-height: 100%;
+    max-width: 100%;
+	left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+	z-index: 1;
+
+}
 
 </style>
 <script>
-$(document).ready(function(){
-    animateDiv();
-    
+$(document).ready(function() {
+    animateDiv($('.a'));
+        animateDiv($('.b'));
+        animateDiv($('.c'));
+
 });
 
-function makeNewPosition(){
-    
+function makeNewPosition($container) {
+
     // Get viewport dimensions (remove the dimension of the div)
-    var h = $(window).height() - 50;
-    var w = $(window).width() - 50;
-    
+    var h = $container.height() - 50;
+    var w = $container.width() - 50;
+
     var nh = Math.floor(Math.random() * h);
     var nw = Math.floor(Math.random() * w);
-    
-    return [nh,nw];    
-    
+
+    return [nh, nw];
+
 }
 
-function animateDiv(){
-    var newq = makeNewPosition();
-    var oldq = $('.a').offset();
+function animateDiv($target) {
+    var newq = makeNewPosition($target.parent());
+    var oldq = $target.offset();
     var speed = calcSpeed([oldq.top, oldq.left], newq);
-    
-    $('.a').animate({ top: newq[0], left: newq[1] }, speed, function(){
-      animateDiv();        
+
+    $target.animate({
+        top: newq[0],
+        left: newq[1]
+    }, speed, function() {
+        animateDiv($target);
     });
-    
+
 };
 
 function calcSpeed(prev, next) {
-    
+
     var x = Math.abs(prev[1] - next[1]);
     var y = Math.abs(prev[0] - next[0]);
-    
+
     var greatest = x > y ? x : y;
-    
+
     var speedModifier = 0.8;
 
-    var speed = Math.ceil(greatest/speedModifier);
+    var speed = Math.ceil(greatest / speedModifier);
 
     return speed;
 
 }
-  
   </script>
 <audio autoplay loop>
   <source src="urss.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
+<div class="giftxt">
+  <img src="luistxt.gif" height="130"  >
+  </div>
 <div class="scroll-up">
 <span class="texto"> Chapter I. Bourgeois and Proletarians<br><br>
 
@@ -435,11 +548,28 @@ When, in the course of development, class distinctions have disappeared, and all
 In place of the old bourgeois society, with its classes and class antagonisms, we shall have an association, in which the free development of each is the condition for the free development of all.
 </span>
 </div>
+
 <div class="a">
 <div class="shake-hard shake-constant shake-constant--hover">
-<img src="stalin.jpg" height="200">
+<img src="stalin.jpg" height="400">
 </div>
 </div>
+<div class="b-wrp">
+<div class="b">
+<div class="shake-slow shake-constant shake-constant--hover">
+<img src="luis.jpg" height="500">
+</div>
+</div>
+
+<div class="c-wrp">
+<div class="c">
+<div class="shake-slow shake-constant shake-constant--hover">
+<img src="conejo.jpg" height="500">
+</div>
+</div>
+</div>
+
+
 
 </body>
 </html>
