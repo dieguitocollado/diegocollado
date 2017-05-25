@@ -4,29 +4,37 @@
 <head>
   <meta charset="utf-8">
 
-  <title>The HTML5 Herald</title>
-  <meta name="description" content="The HTML5 Herald">
-  <meta name="author" content="SitePoint">
+  <title>luis el comunista - diegocollado</title>
+  <meta name="description" content="luis el comunista - diegocollado">
+  <meta name="author" content="diego">
 
-  <link rel="stylesheet" href="css/styles.css?v=1.0">
+  
+  <link rel="stylesheet" type="text/css" href="http://csshake.surge.sh/csshake.min.css">
 
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
   <![endif]-->
+   <script src="http://code.jquery.com/jquery-1.7.2.min.js">
+  </script>
 </head>
 
 <body>
-  <script src="js/scripts.js"></script>
-  
+
+ 
   <style style="text/css">
       body {
           background-color: red;
+		  background-image: url("comunista.gif-c200");
+		  background-size: 40px;
       }
 .scroll-up {
  height: 600px;	
  overflow: hidden;
  position: relative;
- background: red;
+ background: transparent;
+ font-family: "Times New Roman", Georgia, Serif;
+ font-weight: 900;
+ 
  color: orange;
 
 }
@@ -67,8 +75,91 @@
  transform: translateY(-100%); 
  }
 }
+
+
+.a {
+    opacity:0;  
+    animation: a 16s infinite;
+	-webkit-animation-delay: 8s; /* Safari 4.0 - 8.0 */
+    animation-delay: 8s;
+}
+
+@keyframes a {
+  0%   { opacity:1; }
+  50%  { opacity:0; }
+  100% { opacity:1; }
+}
+@-o-keyframes a{
+  0%   { opacity:1; }
+  50%  { opacity:0; }
+  100% { opacity:1; }
+}
+@-moz-keyframes a{
+  0%   { opacity:1; }
+  50%  { opacity:0; }
+  100% { opacity:1; }
+}
+@-webkit-keyframes a{
+  0%   { opacity:1; }
+  50%  { opacity:0; }
+  100% { opacity:1; }
+}
+.animate-flicker {
+
+   -webkit-animation: a 16s infinite;
+   -moz-animation: a 16s infinite;
+   -o-animation: a 16s infinite;
+    animation: a 16s infinite;
+}
+
 </style>
-<audio controls="hidden" autoplay loop>
+<script>
+$(document).ready(function(){
+    animateDiv();
+    
+});
+
+function makeNewPosition(){
+    
+    // Get viewport dimensions (remove the dimension of the div)
+    var h = $(window).height() - 50;
+    var w = $(window).width() - 50;
+    
+    var nh = Math.floor(Math.random() * h);
+    var nw = Math.floor(Math.random() * w);
+    
+    return [nh,nw];    
+    
+}
+
+function animateDiv(){
+    var newq = makeNewPosition();
+    var oldq = $('.a').offset();
+    var speed = calcSpeed([oldq.top, oldq.left], newq);
+    
+    $('.a').animate({ top: newq[0], left: newq[1] }, speed, function(){
+      animateDiv();        
+    });
+    
+};
+
+function calcSpeed(prev, next) {
+    
+    var x = Math.abs(prev[1] - next[1]);
+    var y = Math.abs(prev[0] - next[0]);
+    
+    var greatest = x > y ? x : y;
+    
+    var speedModifier = 0.8;
+
+    var speed = Math.ceil(greatest/speedModifier);
+
+    return speed;
+
+}
+  
+  </script>
+<audio autoplay loop>
   <source src="urss.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
@@ -343,6 +434,11 @@ When, in the course of development, class distinctions have disappeared, and all
 
 In place of the old bourgeois society, with its classes and class antagonisms, we shall have an association, in which the free development of each is the condition for the free development of all.
 </span>
+</div>
+<div class="a">
+<div class="shake-hard shake-constant shake-constant--hover">
+<img src="stalin.jpg" height="200">
+</div>
 </div>
 
 </body>
