@@ -1,0 +1,95 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>The HTML5 Herald</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+
+  <link rel="stylesheet" type="text/css" href="http://csshake.surge.sh/csshake.min.css">
+
+
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+  <script src="http://code.jquery.com/jquery-1.7.2.min.js">
+  </script>
+ 
+  
+</head>
+
+<style>
+body {
+background: url(bgamigos.png);
+    background-size: 20px 20px;
+background-color: white;
+
+}
+
+
+div.a {
+
+ 
+position:fixed;
+    
+}
+
+</style>
+<body>
+<script>
+$(document).ready(function(){
+    animateDiv();
+    
+});
+
+function makeNewPosition(){
+    
+    // Get viewport dimensions (remove the dimension of the div)
+    var h = $(window).height() - 50;
+    var w = $(window).width() - 50;
+    
+    var nh = Math.floor(Math.random() * h);
+    var nw = Math.floor(Math.random() * w);
+    
+    return [nh,nw];    
+    
+}
+
+function animateDiv(){
+    var newq = makeNewPosition();
+    var oldq = $('.a').offset();
+    var speed = calcSpeed([oldq.top, oldq.left], newq);
+    
+    $('.a').animate({ top: newq[0], left: newq[1] }, speed, function(){
+      animateDiv();        
+    });
+    
+};
+
+function calcSpeed(prev, next) {
+    
+    var x = Math.abs(prev[1] - next[1]);
+    var y = Math.abs(prev[0] - next[0]);
+    
+    var greatest = x > y ? x : y;
+    
+    var speedModifier = 0.8;
+
+    var speed = Math.ceil(greatest/speedModifier);
+
+    return speed;
+
+}
+  
+  </script>
+<!-- and stops on :hover -->
+<div class='a'>
+<div class="shake-hard shake-constant shake-constant--hover">
+<a href="lucas.html"><img src="lucastxt.gif" height="60"></a>
+</div>
+</div>
+
+</body>
+</html>
