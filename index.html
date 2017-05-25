@@ -308,20 +308,20 @@ a {
  -moz-transform:translateX(0%);
  transform:translateX(0%);
  /* Apply animation to this element */	
- -moz-animation: bouncing-text 5s linear infinite alternate;
- -webkit-animation: bouncing-text 5s linear infinite alternate;
- animation: bouncing-text 5s linear infinite alternate;
+ -moz-animation: link3 5s linear infinite alternate;
+ -webkit-animation: link3 5s linear infinite alternate;
+ animation: link3 5s linear infinite alternate;
 }
 /* Move it (define the animation) */
-@-moz-keyframes bouncing-text {
+@-moz-keyframes link3 {
  0%   { -moz-transform: translateX(0%); }
  100% { -moz-transform: translateX(-90%); }
 }
-@-webkit-keyframes bouncing-text {
+@-webkit-keyframes link3 {
  0%   { -webkit-transform: translateX(0%); }
  100% { -webkit-transform: translateX(-90%); }
 }
-@keyframes bouncing-text {
+@keyframes link3 {
  0%   { 
  -moz-transform: translateX(0%); /* Browser bug fix */
  -webkit-transform: translateX(0%); /* Browser bug fix */
@@ -377,18 +377,11 @@ z-index: -1;
 
 
 .link4 {
- height: 800px;	
- overflow: hidden;
-font-family: Papyrus,fantasy;
-font-weight: 900;
  position: absolute;
- width: 100%;
+right: 0px;
+    width: 300px;
  height: 100%;
- margin: 0;
- line-height: 50px;
- text-align: right;
- font-size: 350%;
- z-index: 1;
+ z-index: 2;
  /* Apply animation to this element */	
  -moz-animation: link4 5s linear infinite alternate;
  -webkit-animation: link4 5s linear infinite alternate;
@@ -417,7 +410,7 @@ font-weight: 900;
 }
 
 .link5 {
- height: 800px;	
+
  overflow: hidden;
  position: absolute;
  width: 100%;
@@ -430,15 +423,15 @@ font-weight: 900;
  animation: link4 5s linear infinite alternate;
 }
 /* Move it (define the animation) */
-@-moz-keyframes link4 {
+@-moz-keyframes link5 {
  0%   { -moz-transform: translateY(70%); }
  100% { -moz-transform: translateY(0%); }
 }
-@-webkit-keyframes link4 {
+@-webkit-keyframes link5 {
  0%   { -webkit-transform: translateY(70%); }
  100% { -webkit-transform: translateY(0%); }
 }
-@keyframes link4 {
+@keyframes link5 {
  0%   { 
  -moz-transform: translateY(70%); /* Firefox bug fix */
  -webkit-transform: translateY(70%); /* Firefox bug fix */
@@ -493,7 +486,7 @@ font-weight: 900;
     <a class="link3" href="investigacion.html"><span style="color:#00ced1;">preguntas existenciales</span></a>
     </div>
  <div class="link4">
-    <a class="link" href="yo.html"><span style="color:#cc9900;">quien soy</span></a>
+    <a class="link" href="yo.html"><img src="quiensoy.gif"></a>
     </div>
  <div class="link5">
     <a class="link" href="lucas.html"><img src="lucastxt.gif"></a>
