@@ -184,44 +184,16 @@ background-size: 1800% 1800%;
 
 
 	<style style="text/css">
-.lol {
 
- overflow: hidden;
- position: relative;
-}
 	
-.lol img {
- position: absolute;
- width: 100%;
- height: 100%;
- margin: 0;
+.lol {
+       position: absolute;
+    top: 400px;
+    height: 80px;
+    right: 0;
+    z-index: 1;
 
- /* Apply animation to this element */	
- -moz-animation: lol 5s linear infinite alternate;
- -webkit-animation: lol 5s linear infinite alternate;
- animation: lol 5s linear infinite alternate;
 }
-/* Move it (define the animation) */
-@-moz-keyframes lol {
- 0%   { -moz-transform: translateX(70%); }
- 100% { -moz-transform: translateX(0%); }
-}
-@-webkit-keyframes lol {
- 0%   { -webkit-transform: translateX(70%); }
- 100% { -webkit-transform: translateX(0%); }
-}
-@keyframes lol {
- 0%   { 
- -moz-transform: translateX(70%); /* Firefox bug fix */
- -webkit-transform: translateX(70%); /* Firefox bug fix */
- transform: translateX(70%); 		
- }
- 100% { 
- -moz-transform: translateX(0%); /* Firefox bug fix */
- -webkit-transform: translateX(0%); /* Firefox bug fix */
- transform: translateX(0%); 
- }
-}	
 
 </style>
 <body>
@@ -235,7 +207,7 @@ background-size: 1800% 1800%;
   <img src="lucastxt.gif" height="130"  >
   </div>
   <div class="lol">
-<img src="lol.gif" height="130"  >
+<img src="lol.gif" height="80"  >
 </div>
  
 </body>
