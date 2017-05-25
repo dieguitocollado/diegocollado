@@ -357,10 +357,63 @@ z-index: -1;
 
 }
 
+.pacman {
+     position: absolute;
+    left: 150px;
+    bottom: 10px;
+    height: 80px;
+
+z-index: -1;
+	
+
+}
+
+.esqueleto {
+     position: absolute;
+    left: 260px;
+    bottom: 40px;
+    height: 80px;
+	transform: translate(-50%, -50%)
+
+ /* Starting position */
+ -webkit-transform:translateX(0%);	
+ -moz-transform:translateX(0%);
+ transform:translateX(0%);
+ /* Apply animation to this element */	
+ -moz-animation: bouncing-text 5s linear infinite alternate;
+ -webkit-animation: bouncing-text 5s linear infinite alternate;
+ animation: bouncing-text 5s linear infinite alternate;
+}
+/* Move it (define the animation) */
+@-moz-keyframes bouncing-text {
+ 0%   { -moz-transform: translateX(0%); }
+ 100% { -moz-transform: translateX(-90%); }
+}
+@-webkit-keyframes bouncing-text {
+ 0%   { -webkit-transform: translateX(0%); }
+ 100% { -webkit-transform: translateX(-90%); }
+}
+@keyframes bouncing-text {
+ 0%   { 
+ -moz-transform: translateX(0%); /* Browser bug fix */
+ -webkit-transform: translateX(0%); /* Browser bug fix */
+ transform: translateX(0%); 		
+ }
+ 100% { 
+ -moz-transform: translateX(-90%); /* Browser bug fix */
+ -webkit-transform: translateX(-90%); /* Browser bug fix */
+ transform: translateX(-90%); 
+ }
+
+z-index: -1;
+	
+
+}
+
 .tree {
      position: absolute;
     left: -50px;
-    bottom: 30px;
+    bottom: 45px;
     height: 150px;
 	width: 793px;
 	-moz-transform: scaleX(-1);
@@ -463,7 +516,7 @@ right: 0px;
 </div>
 <div class="bg">
   <div class="gif">
-    <img src="gif.gif" height="100">
+    <img src="gif.gif" loop=infinite height="150">
   </div>
   <div class="text">
     BIENVENIDO
@@ -486,20 +539,27 @@ right: 0px;
     <a class="link3" href="investigacion.html"><span style="color:#00ced1;">preguntas existenciales</span></a>
     </div>
  <div class="link4">
-    <a class="link" href="yo.html"><img src="quiensoy.gif"></a>
+    <a class="link" href="yo.html"><img src="quiensoy.gif" loop=infinite></a>
     </div>
  <div class="link5">
-    <a class="link" href="lucas.html"><img src="lucastxt.gif"></a>
+    <a class="link" href="lucas.html"><img src="lucastxt.gif" loop=infinite></a>
     </div>
 	<div class="fuego">
 	
 	</div>
 	<div class="blob">
-		<img src="blob.gif" height="180">
+		<img src="blob.gif" loop=infinite height="180">
 	</div>
 	<div class="tree">
-		<img src="tree.gif" height="190">
+		<img src="tree.gif" loop=infinite height="190">
 	</div>
+	<div class="pacman">
+		<img src="pacman.gif" loop=infinite height="80">
+	</div>
+	<div class="esqueleto">
+		<img src="esqueleto.gif" loop=infinite height="120">
+	</div>
+	
 </div>
 
 </div>  
