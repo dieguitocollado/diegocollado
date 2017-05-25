@@ -182,6 +182,47 @@ background-size: 1800% 1800%;
         position:absolute;
     }    .overlays{
 
+
+	<style style="text/css">
+.lol {
+
+ overflow: hidden;
+ position: relative;
+}
+	
+.lol img {
+ position: absolute;
+ width: 100%;
+ height: 100%;
+ margin: 0;
+
+ /* Apply animation to this element */	
+ -moz-animation: lol 5s linear infinite alternate;
+ -webkit-animation: lol 5s linear infinite alternate;
+ animation: lol 5s linear infinite alternate;
+}
+/* Move it (define the animation) */
+@-moz-keyframes lol {
+ 0%   { -moz-transform: translateX(70%); }
+ 100% { -moz-transform: translateX(0%); }
+}
+@-webkit-keyframes lol {
+ 0%   { -webkit-transform: translateX(70%); }
+ 100% { -webkit-transform: translateX(0%); }
+}
+@keyframes lol {
+ 0%   { 
+ -moz-transform: translateX(70%); /* Firefox bug fix */
+ -webkit-transform: translateX(70%); /* Firefox bug fix */
+ transform: translateX(70%); 		
+ }
+ 100% { 
+ -moz-transform: translateX(0%); /* Firefox bug fix */
+ -webkit-transform: translateX(0%); /* Firefox bug fix */
+ transform: translateX(0%); 
+ }
+}	
+
 </style>
 <body>
 <audio loop autoplay><source src="titanic.mp3" type="audio/mpeg">Your browser does not support the audio element.</audio>
@@ -193,6 +234,9 @@ background-size: 1800% 1800%;
   <div class="giftxt">
   <img src="lucastxt.gif" height="130"  >
   </div>
+  <div class="lol">
+<img src="lol.gif" height="130"  >
+</div>
  
 </body>
 </html>
