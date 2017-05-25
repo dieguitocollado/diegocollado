@@ -76,7 +76,7 @@ width: 340px;
   top: 0;
   bottom: 0;
   position: absolute;
-  z-index: 1;
+  z-index: -1;
   opacity: 0.4;
 background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
 background-size: 1800% 1800%;
@@ -298,6 +298,7 @@ background-size: 1800% 1800%;
 	opacity: 0;		
 	overflow: visible;
 	background-size: contain; //auto|length|cover|contain|initial|inherit
+	z-index: 3;
 }
 
 @for $i from 1 to 20 {
@@ -309,7 +310,7 @@ background-size: 1800% 1800%;
 		//for demo:
 		$duration: 15 + random(5);
 		animation: animation#{$i} linear #{$duration}s infinite;
-		$size: 12px + random(20);
+		$size: 100px + random(20);
 		height: $size;
 		width: $size; 
 		$imglist: url(lucas.jpg),
@@ -339,6 +340,7 @@ background-size: 1800% 1800%;
 	width: 100%;
 	margin: 0 auto;
 	position: relative;
+	z-index: 3;
 }
 
 
