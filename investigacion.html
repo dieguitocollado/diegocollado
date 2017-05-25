@@ -20,7 +20,7 @@ body {
 
 .form {
     margin: auto;
-    width: 50%;
+
     padding: 10px;
 }
 h1{
@@ -52,6 +52,11 @@ a:visited {
     background-color: transparent;
     text-decoration: none;
 }
+
+input[type=submit] {
+    width: 20em;  height: 2em;
+}
+
 </style>
 <body>
 <br>
@@ -61,15 +66,12 @@ a:visited {
 <h1>el por qué de la vida. vivimos todos enjaulados, maniatados por una sociedad perversa dominada por benthocodones? . hago tarot gratuito.</h1>
 <br>
 <br>
-<br>
-<br>
-<br>
-<br>
+
 <div class="form">
 	
 <form action="https://formspree.io/enragedjam@gmail.com" method="POST">
-    <textarea name="message" placeholder="Your message"></textarea>
-    <input type="submit" value="Send">
+    <textarea rows="4" cols="50" name="message" placeholder="tu pregunta"></textarea><br>
+    <input type="submit" value="consultar">
 	<input type="hidden" name="_next" value="/gracias.html" />
 	<input type="text" name="_gotcha" style="display:none" />
 </form>
