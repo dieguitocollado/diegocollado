@@ -36,48 +36,67 @@ position:fixed;
     
 }
 
-</style>
-<body>
-<script>
-$(document).ready(function(){
-    animateDiv();
-    
-});
 
-function makeNewPosition(){
+div.b {
+
+position:fixed;
     
-    // Get viewport dimensions (remove the dimension of the div)
-    var h = $(window).height() - 50;
-    var w = $(window).width() - 50;
-    
-    var nh = Math.floor(Math.random() * h);
-    var nw = Math.floor(Math.random() * w);
-    
-    return [nh,nw];    
+}
+div.c {
+width: 50px;
+height:50px;
+ visibility: hidden;
+position:fixed;
     
 }
 
-function animateDiv(){
-    var newq = makeNewPosition();
-    var oldq = $('.a').offset();
+</style>
+<body>
+<script>
+$(document).ready(function() {
+    animateDiv($('.a'));
+        animateDiv($('.b'));
+        animateDiv($('.c'));
+
+});
+
+function makeNewPosition($window) {
+
+    // Get viewport dimensions (remove the dimension of the div)
+    var h = $(window).height() - 50;
+    var w = $(window).height() - 50;
+
+    var nh = Math.floor(Math.random() * h);
+    var nw = Math.floor(Math.random() * w);
+
+    return [nh, nw];
+
+}
+
+function animateDiv($target) {
+    var newq = makeNewPosition($target.parent());
+    var oldq = $target.offset();
     var speed = calcSpeed([oldq.top, oldq.left], newq);
-    
-    $('.a').animate({ top: newq[0], left: newq[1] }, speed, function(){
-      animateDiv();        
+
+    $target.animate({
+        top: newq[0],
+        left: newq[1]
+    }, speed, function() {
+        animateDiv($target);
     });
-    
+
 };
 
 function calcSpeed(prev, next) {
-    
+
     var x = Math.abs(prev[1] - next[1]);
     var y = Math.abs(prev[0] - next[0]);
-    
+
     var greatest = x > y ? x : y;
-    
+
     var speedModifier = 0.8;
 
-    var speed = Math.ceil(greatest/speedModifier);
+    var speed = Math.ceil(greatest / speedModifier);
 
     return speed;
 
@@ -90,6 +109,12 @@ function calcSpeed(prev, next) {
 <div class='a'>
 <div class="shake-hard shake-constant shake-constant--hover">
 <a href="lucas.html"><img src="lucastxt.gif" height="60"></a>
+</div>
+</div>
+
+<div class='b'>
+<div class="shake-hard shake-constant shake-constant--hover">
+<a href="luis.html"><img src="luistxt.gif" height="70"></a>
 </div>
 </div>
 
