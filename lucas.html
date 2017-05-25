@@ -10,16 +10,44 @@
 
   
 
-  <!--[if lt IE 9]>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
-  <![endif]-->
-</head>
-<style>
-body {
-    background-image: url("dafoe.gif");
-    background-color: #cccccc;
+<!--[if IE]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script type="text/javascript">
+var dafoeSelection = 16
+var dafoe = new Array(dafoeSelection+1)
+dafoe[0]= "/dafoe/dafoe.gif"
+dafoe[1]= "/dafoe/dafoe1.gif"
+dafoe[2]= "/dafoe/dafoe2.gif"
+dafoe[3]= "/dafoe/dafoe3.webp"
+dafoe[4]= "/dafoe/dafoe4.webp"
+dafoe[5]= "/dafoe/dafoe5.webp"
+dafoe[6]= "/dafoe/dafoe6.gif"
+dafoe[7]= "/dafoe/dafoe7.webp"
+dafoe[8]= "/dafoe/dafoe8.gif"
+dafoe[9]= "/dafoe/dafoe9.gif"
+dafoe[10]= "/dafoe/dafoe10.gif"
+dafoe[11]= "/dafoe/dafoe11.gif"
+dafoe[12]= "/dafoe/dafoe12.gif"
+dafoe[13]= "/dafoe/dafoe13.gif"
+dafoe[14]= "/dafoe/dafoe14.gif"
+dafoe[15]= "/dafoe/dafoe15.gif"
+dafoe[16]= "/dafoe/dafoe16.webp"
+function randomNumber(){
+var randomLooper = -1
+while (randomLooper < 0 || randomLooper > dafoeSelection || isNaN(randomLooper)){ randomLooper = parseInt(Math.random()*(dafoeSelection+1))
 }
+return randomLooper
+}
+var randomsub = randomNumber()
+var dafoeFile = dafoe[randomsub]
+document.write ('<style>body { background-color: #cccccc;background-image: url("' + dafoeFile + '"); } </style>' )
 
+
+</script>
+</head>
+
+<style>
 .lucas{
 
 position: absolute;
