@@ -15,118 +15,128 @@
   <![endif]-->
   
   <style>
+import "bourbon";
+
+html {
+  min-height: 100%;
+}
+
 body {
-  
   height: 100%;
-  font-family: 'tradegothiclt-bold', sans-serif;
 }
 
-h1 {
-  font-size: 5em;
-  color: white;
-  text-transform: uppercase;
+// length of each slide in seconds
+$animation-delay: 6s;
+
+.slideshow {
+  list-style: none;
   z-index: 1;
-}
+  li {
+    span { 
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      color: transparent;
+      background-size: cover;
+      background-position: 50% 50%;
+      background-repeat: none;
+      opacity: 0;
+      z-index: 0;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      // multiply slide duration by the total number of slides
+      @include animation(imageAnimation $animation-delay * 4 linear infinite 0s);
+    }
+    h3 {
+      position: absolute;
+      text-align: center;
+      z-index: 2;
+      bottom: 150px;
+      left: 0;
+      right: 0;
+      opacity: 0;
+      font-size: em(65px);
+      font-family: 'Josefin Sans', sans-serif;
+      text-transform: uppercase;
+      color: #fff;
+      // multiply slide duration by the total number of slides
+      @include animation(titleAnimation $animation-delay * 4 linear 1 0s);
 
-span {
-  border-right: .05em solid;
-  animation: caret 1s steps(1) infinite;
-}
+      @media only screen and (min-width: 768px) {
+        bottom: 30px;
+        font-size: em(130px);
+      }
 
-@keyframes caret {
-  50% {
-    border-color: transparent;
+      @media only screen and (min-width: 1024px) {
+        font-size: em(175px);
+      }
+    }
   }
 }
 
-.cb-slideshow,
-.cb-slideshow:after { 
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0px;
-    left: 0px;
-    z-index: 0; 
+// add and remove new slides here, maintaning the animation-delay format
+.slideshow li:nth-child(1) span { 
+  background-image: url(/art/1.jpg);
 }
-.cb-slideshow:after { 
-    content: '';
-    background: transparent url(../images/pattern.png) repeat top left; 
+.slideshow li:nth-child(2) span { 
+  background-image: url(/art/2.jpg);
+  @include animation-delay($animation-delay);
+}
+.slideshow li:nth-child(3) span { 
+  background-image: url(/art/3.jpg);
+  @include animation-delay($animation-delay * 2);
+}
+.slideshow li:nth-child(4) span { 
+  background-image: url(/art/4.jpg);
+  @include animation-delay($animation-delay * 3);
 }
 
-.cb-slideshow li span { 
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    color: transparent;
-    background-size: cover;
-    background-position: 50% 50%;
-    background-repeat: none;
+// animation for the slideshow images
+@include keyframes(imageAnimation) {
+  0% {
     opacity: 0;
-    z-index: 0;
-    animation: imageAnimation 36s linear infinite 0s; 
-}
-
-
-.cb-slideshow li div { 
-    z-index: 1000;
-    position: absolute;
-    bottom: 30px;
-    left: 0px;
-    width: 100%;
-    text-align: center;
+    @include animation-timing-function(ease-in);
+  }
+  12.5% {
+    opacity: 1;
+    @include animation-timing-function(ease-out);
+  }
+  25% {
+    opacity: 1;
+  }
+  37.5% {
     opacity: 0;
-    color: #fff;
-    animation: titleAnimation 36s linear infinite 0s; 
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
-.cb-slideshow li:nth-child(1) span { 
-    background-image: url(/miro/1.jpg) 
-}
-.cb-slideshow li:nth-child(2) span { 
-    background-image: url(/miro/2.jpg);
-    animation-delay: 6s; 
-}
-.cb-slideshow li:nth-child(3) span { 
-    background-image: url(/miro/3.jpg);
-    animation-delay: 12s; 
-}
-.cb-slideshow li:nth-child(4) span { 
-    background-image: url(/miro/4.jpg);
-    animation-delay: 18s; 
-}
-.cb-slideshow li:nth-child(5) span { 
-    background-image: url(/miro/5.jpg);
-    animation-delay: 24s; 
-}
-
-
-.cb-slideshow li:nth-child(2) div { 
-    animation-delay: 6s; 
-}
-.cb-slideshow li:nth-child(3) div { 
-    animation-delay: 12s; 
-}
-.cb-slideshow li:nth-child(4) div { 
-    animation-delay: 18s; 
-}
-.cb-slideshow li:nth-child(5) div { 
-    animation-delay: 24s; 
+// animation for the title
+@include keyframes(titleAnimation) {
+  0% {
+    opacity: 0;
+  }
+  12.5% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 1;
+  }
+  37.5% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
-@keyframes imageAnimation { 
-    0% { opacity: 0; animation-timing-function: ease-in; }
-    8% { opacity: 1; animation-timing-function: ease-out; }
-    17% { opacity: 1 }
-    25% { opacity: 0 }
-    100% { opacity: 0 }
+// modernizr is used to show the first slide as a fallback for when css animations are not supported
+.no-cssanimations .slideshow li span {
+  opacity: 1;
 }
-
-.no-cssanimations .cb-slideshow li span{
-	opacity: 1;
-}
-
 </style>
 
 
@@ -136,58 +146,24 @@ span {
 
   <script src="js/scripts.js"></script>
   <script>
-  document.addEventListener('DOMContentLoaded',function(event){
-  // array with texts to type in typewriter
-  var dataText = [ "A single butterfly", "fluttering and drifting", "in the wind", "#pretentioushaiku"];
-  
-  // type one text in the typwriter
-  // keeps calling itself until the text is finished
-  function typeWriter(text, i, fnCallback) {
-    // chekc if text isn't finished yet
-    if (i < (text.length)) {
-      // add next character to h1
-     document.querySelector("h1").innerHTML = text.substring(0, i+1) +'<span aria-hidden="true"></span>';
-
-      // wait for a while and call this function again for next character
-      setTimeout(function() {
-        typeWriter(text, i + 1, fnCallback)
-      }, 100);
-    }
-    // text finished, call callback if there is a callback function
-    else if (typeof fnCallback == 'function') {
-      // call callback after timeout
-      setTimeout(fnCallback, 1100);
-    }
-  }
-  // start a typewriter animation for a text in the dataText array
-   function StartTextAnimation(i) {
-     if (typeof dataText[i] == 'undefined'){
-        setTimeout(function() {
-          StartTextAnimation(0);
-        }, 20000);
-     }
-     // check if dataText[i] exists
-    if (i < dataText[i].length) {
-      // text exists! start typewriter animation
-     typeWriter(dataText[i], 0, function(){
-       // after callback (and whole text has been animated), start next text
-       StartTextAnimation(i + 1);
-     });
-    }
-  }
-  // start the text animation
-  StartTextAnimation(0);
-});
-  
+ 
   </script>
- <ul class="cb-slideshow">
-            <li><span>Image 01</span><div><h3>re·lax·a·tion</h3></div></li>
-            <li><span>Image 02</span><div><h3>qui·e·tude</h3></div></li>
-            <li><span>Image 03</span><div><h3>bal·ance</h3></div></li>
-            <li><span>Image 04</span><div><h3>e·qua·nim·i·ty</h3></div></li>
-            <li><span>Image 05</span><div><h3>com·po·sure</h3></div></li>
-            <li><span>Image 06</span><div><h3>se·ren·i·ty</h3></div></li>
-        </ul>
+<ul class='slideshow'>
+  <li>
+    <h3>art</h3>
+    <!-- By Keven Law from Los Angeles, USA (Long Hot Summer......) [CC-BY-SA-2.0 (http://creativecommons.org/licenses/by-sa/2.0)], via Wikimedia Commons, http://commons.wikimedia.org/wiki/File%3AFlickr_-_law_keven_-_Long_Hot_Summer.......jpg -->
+    <span>a single butterfly</span>
+  </li>
+  <li>
+    <!-- By http://www.ForestWander.com [CC-BY-SA-3.0-us (http://creativecommons.org/licenses/by-sa/3.0/us/deed.en)], via Wikimedia Commons, http://commons.wikimedia.org/wiki/File%3ARed-fall-tree-lake_-_West_Virginia_-_ForestWander.png -->
+    <span>fluttering and drifting</span>
+  </li>
+  <li>
+    <!-- By Valerii Tkachenko [CC-BY-2.0 (http://creativecommons.org/licenses/by/2.0)], via Wikimedia Commons, http://commons.wikimedia.org/wiki/File%3AWinter_wonderland_Austria_mountain_landscape_(8290712092).jpg -->
+    <span>in the wind</span>
+  </li>
+  
+</ul>
   
 </body>
 </html>
