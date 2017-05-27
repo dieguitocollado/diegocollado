@@ -1,6 +1,7 @@
 ---
-engrish: post
 title: relax o como suspender inglés
+layout: post
+category: blog
 ---
 
 hey ya se han acabado los trimestrales no?

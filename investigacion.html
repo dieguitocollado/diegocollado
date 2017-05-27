@@ -1,3 +1,7 @@
+---
+title: investigación
+---
+
 <!doctype html>
 
 <html lang="en">
@@ -23,13 +27,56 @@ body {
 
     padding: 10px;
 }
+.rainbow {
+font-size: 500%;
+line-height: 150%;
+font-weight: 900;
+text-align: center;
+   /* Chrome, Safari, Opera */
+  -webkit-animation: rainbow 1s infinite; 
+  
+  /* Internet Explorer */
+  -ms-animation: rainbow 1s infinite;
+  
+  /* Standar Syntax */
+  animation: rainbow 1s infinite; 
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes rainbow{
+	20%{color: red;}
+	40%{color: yellow;}
+	60%{color: green;}
+	80%{color: blue;}
+	100%{color: orange;}	
+}
+/* Internet Explorer */
+@-ms-keyframes rainbow{
+	20%{color: red;}
+	40%{color: yellow;}
+	60%{color: green;}
+	80%{color: blue;}
+	100%{color: orange;}	
+}
+
+/* Standar Syntax */
+@keyframes rainbow{
+	20%{color: red;}
+	40%{color: yellow;}
+	60%{color: green;}
+	80%{color: blue;}
+	100%{color: orange;}	
+}
+
 h1{
 	font-family: "Times New Roman", Georgia, Serif;
-	font-size: 400%;
-	font-weight: 1300;
+	font-size: 200%;
+	font-weight: 900;
 	color: white;
-	text-align: center;
+	line-height: 150%;
+	text-align: left;
 	}
+	
 	a {
 	text-align: center;
 	font-family: "Times New Roman", Georgia, Serif;
@@ -61,7 +108,9 @@ input[type=submit] {
 <body>
 <br>
 <br>
-<h1>preguntas existenciales.</h1>
+<div class="rainbow">
+preguntas <br> existenciales.
+</div>
 <br>
 <h1>el por qué de la vida. vivimos todos enjaulados, maniatados por una sociedad perversa dominada por benthocodones? . hago tarot gratuito.</h1>
 <br>
@@ -78,6 +127,35 @@ input[type=submit] {
 	</div>
 <br>
 <br>
+<section>
+<div class="respuestas">
+{% for post in site.categories.respuesta %}
+		{% unless post.next %}
+			<h3>{{ post.date | date: '%Y' }} &#172;</h3>
+		{% else %}
+			{% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
+			{% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
+			{% if year != nyear %}
+				<h3>{{ post.date | date: '%Y' }} &#172;</h3>
+			{% endif %}
+		{% endunless %}
+
+		<ul>
+			<li>
+				<div class="post-date">
+					<span>{{ post.date | date: "%b %d" }}
+					</span>
+					
+				</div>
+				<div class="title">
+					<a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+				</div>
+			</li>
+		</ul>
+
+	{% endfor %}
+</div>
+</section>
 <br>
 <br>
 <br>
