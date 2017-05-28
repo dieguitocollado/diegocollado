@@ -21,18 +21,8 @@ layout: page
 
 
   $(document).ready(function() {
-  // Repeat this for each of your URLs
-  $('#mydiv').load('preguntas.html #preguntas', function(response, status, xhr) {
-    if (status == "error") {
-        var msg = "Sorry but there was an error: ";
-        alert(msg + xhr.status + " " + xhr.statusText);
-      }
+$('#preguntas').load('/preguntas.hmtl #preguntas');
 });
-  setTimeout(function() {
-    location.reload(true);
-  }, 10000); // Refresh every ten seconds
-});
-  
   </script>
 </head>
 <style>
