@@ -18,14 +18,22 @@ layout: page
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
   <![endif]-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
-  $('#mydiv').load('preguntas.html #preguntas', function(response, status, xhr) {
-    if (status == "error") {
-        var msg = "Sorry but there was an error: ";
-        alert(msg + xhr.status + " " + xhr.statusText);
-      }
+
+
+  $(document).ready(function() {
+  // Repeat this for each of your URLs
+  $.get("preguntas.html", function(data) {
+    var resp = $(data); // Now you can do whatever you want with it
+    $("#preguntas", resp).appendTo("preguntas2");
+  });
+  // End Repeat
+
+  setTimeout(function() {
+    location.reload(true);
+  }, 10000); // Refresh every ten seconds
 });
   
-  </script
+  </script>
 </head>
 <style>
 body {
@@ -137,8 +145,7 @@ preguntas <br> existenciales.
 	</div>
 <br>
 <br>
-<div class="preguntas">
-
+<div class="preguntas2">
 </div>
 <br>
 <br>
