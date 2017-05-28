@@ -24,7 +24,7 @@ layout: page
   // Repeat this for each of your URLs
   $.get("preguntas.html", function(data) {
     var resp = $(data); // Now you can do whatever you want with it
-    $("#preguntas", resp).appendTo("preguntas2");
+    $("#preguntas", resp).appendTo("body");
   });
   // End Repeat
 
