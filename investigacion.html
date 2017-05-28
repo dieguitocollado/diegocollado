@@ -1,5 +1,6 @@
 ---
 title: investigación
+layout: page
 ---
 
 <!doctype html>
@@ -128,7 +129,7 @@ preguntas <br> existenciales.
 <br>
 <br>
 <section>
-<div class="respuestas">
+
 {% for post in site.categories.respuesta %}
 		{% unless post.next %}
 			<h3>{{ post.date | date: '%Y' }} &#172;</h3>
@@ -154,7 +155,7 @@ preguntas <br> existenciales.
 		</ul>
 
 	{% endfor %}
-</div>
+
 </section>
 <br>
 <br>
