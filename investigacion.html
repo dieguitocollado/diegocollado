@@ -22,12 +22,12 @@ layout: page
 
   $(document).ready(function() {
   // Repeat this for each of your URLs
-  $.get("preguntas.html", function(data) {
-    var resp = $(data); // Now you can do whatever you want with it
-    $("#preguntas", resp).appendTo("body");
-  });
-  // End Repeat
-
+  $('#mydiv').load('preguntas.html #preguntas', function(response, status, xhr) {
+    if (status == "error") {
+        var msg = "Sorry but there was an error: ";
+        alert(msg + xhr.status + " " + xhr.statusText);
+      }
+});
   setTimeout(function() {
     location.reload(true);
   }, 10000); // Refresh every ten seconds
