@@ -12,11 +12,13 @@
 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 <script type="text/javascript">
-var numberOfSongs = 2
+var numberOfSongs = 4
 var sound = new Array(numberOfSongs+1)
 sound[0]= "http://k003.kiwi6.com/hotlink/vwwqpjsyue/yaz.mp3"
 sound[1]= "http://k003.kiwi6.com/hotlink/lpzy1dm0t6/yaz2.mp3"
 sound[2]= "http://k003.kiwi6.com/hotlink/lrwts5q4ka/beverly.mp3"
+sound[3]= "enough.mp3"
+sound[4]= "enya.mp3"
 function randomNumber(){
 var randomLooper = -1
 while (randomLooper < 0 || randomLooper > numberOfSongs || isNaN(randomLooper)){ randomLooper = parseInt(Math.random()*(numberOfSongs+1))
