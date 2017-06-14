@@ -1,5 +1,5 @@
 ---
-title: sueño extraño #2
+title: sueño extraño vol 2
 layout: post
 date: '2017-06-15 00:20:22 +0200'
 categories: blog
