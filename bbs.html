@@ -1,0 +1,42 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>bbs - diegocollado.net/title>
+  <meta name="description" content="diegocollado">
+  <meta name="author" content="diego">
+
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+  
+</head>
+<style>
+  body {
+    background-color: black;
+}
+  
+  </style>
+<body>
+  <script src="js/scripts.js"></script>
+  
+  
+ <div id="fTelnetContainer"></div>
+<!-- Looks weird, but this ensures your users always get the latest version of fTelnet and not an old version from their cache -->
+<script>document.write('<script src="//embed.ftelnet.ca/js/ftelnet-loader.js?v=' + (new Date()).getTime() + '"><\/script>');</script>
+<script>
+    fTelnet.Hostname = "bbs.diegocollado.net";
+    fTelnet.Port = 23;
+    fTelnet.ProxyHostname = "proxy-nl.ftelnet.ca";
+    fTelnet.ProxyPort = 80;
+    fTelnet.ProxyPortSecure = 443;
+    fTelnet.ConnectionType = "telnet";
+    fTelnet.Emulation = "ansi-bbs";
+    fTelnet.Init();
+</script>
+</body>
+</html>
