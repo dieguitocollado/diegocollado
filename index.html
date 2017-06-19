@@ -345,6 +345,56 @@ a {
  
 }
 
+
+
+.link6
+{
+  
+  position: absolute;
+  z-index: 2;
+
+
+  text-align: right;
+  vertical-align: text-top;
+  position: absolute;
+    top: 3%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+
+ /* Starting position */
+ -webkit-transform:translateX(0%);	
+ -moz-transform:translateX(0%);
+ transform:translateX(0%);
+ /* Apply animation to this element */	
+ -moz-animation: link6 2s linear infinite alternate;
+ -webkit-animation: link6 2s linear infinite alternate;
+ animation: link6 2s linear infinite alternate;
+}
+/* Move it (define the animation) */
+@-moz-keyframes link6 {
+ 0%   { -moz-transform: translateX(0%); }
+ 100% { -moz-transform: translateX(-90%); }
+}
+@-webkit-keyframes link6 {
+ 0%   { -webkit-transform: translateX(0%); }
+ 100% { -webkit-transform: translateX(-90%); }
+}
+@keyframes link6 {
+ 0%   { 
+ -moz-transform: translateX(0%); /* Browser bug fix */
+ -webkit-transform: translateX(0%); /* Browser bug fix */
+ transform: translateX(0%); 		
+ }
+ 100% { 
+ -moz-transform: translateX(-90%); /* Browser bug fix */
+ -webkit-transform: translateX(-90%); /* Browser bug fix */
+ transform: translateX(-90%); 
+ }
+ 
+}
+
+
 .fuego {
      position: absolute;
     left: 0;
@@ -591,7 +641,9 @@ right: 0px;
  <div class="link5">
     <a class="link" href="amigos.html"><img src="amigos.gif" height="70" ></a>
     </div>
-	
+<div class="link6">
+    <a class="link6" href="bbs.html"><img src="bbs.gif" height="70" ></a>
+    </div>
 	<div class="fuego">
 	
 	</div>
