@@ -1,0 +1,261 @@
+.bg
+{
+    background: transparent url('/text.png') left top repeat;
+    background-size: 15px 15px;
+    
+	z-index: -2;
+
+}
+
+button
+{
+    visibility: hidden;
+}
+
+
+.gif
+{
+ 
+ position: absolute;
+    top: 10%;
+    left: 50%;
+    height: 5%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+	
+	
+}
+audio { 
+   display:none;
+}
+.text
+{
+  font-size: 300%;
+  font-family: "Arial Black", Gadget, sans-serif;
+  color: white;
+  text-decoration: underline;
+  text-align: center;
+  vertical-align: middle;
+        top: 20%;
+    left: 30%;
+
+
+  position: absolute;
+
+	
+}
+
+.link1
+{
+  font-size: 150%;
+  font-weight: 900;
+  font-family: "Comic Sans MS", cursive, sans-serif	
+  color: pink;
+  position: absolute;
+  z-index: 2;
+  text-align: left;
+  vertical-align: text-top;
+  position: absolute;
+      top: 28%;
+    left: 10%;
+}
+
+.text {
+   /* Chrome, Safari, Opera */
+  -webkit-animation: rainbow 1s infinite; 
+  
+  /* Internet Explorer */
+  -ms-animation: rainbow 1s infinite;
+  
+  /* Standar Syntax */
+  animation: rainbow 1s infinite; 
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes rainbow{
+	20%{color: red;}
+	40%{color: yellow;}
+	60%{color: green;}
+	80%{color: blue;}
+	100%{color: orange;}	
+}
+/* Internet Explorer */
+@-ms-keyframes rainbow{
+	20%{color: red;}
+	40%{color: yellow;}
+	60%{color: green;}
+	80%{color: blue;}
+	100%{color: orange;}	
+}
+
+/* Standar Syntax */
+@keyframes rainbow{
+	20%{color: red;}
+	40%{color: yellow;}
+	60%{color: green;}
+	80%{color: blue;}
+	100%{color: orange;}	
+}
+
+
+a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.link2
+{
+  font-size: 150%;
+  font-weight: bold;
+  font-family: "Impact", Charcoal, sans-serif
+  position: absolute;
+  z-index: 2;
+
+
+  text-align: right;
+  vertical-align: text-top;
+  position: absolute;
+     top: 37%;
+    left: 18%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+
+}
+
+.link3
+{
+  font-size: 150%;
+  font-weight: 900;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  position: absolute;
+  z-index: 2;
+
+
+  text-align: right;
+  vertical-align: text-top;
+  position: absolute;
+   top: 43%;
+    left: 36%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+
+
+}
+
+
+
+.link6 {
+ overflow: hidden;
+ position: absolute;
+top: 64%;
+    left: 10%;
+    visibility: hidden;
+ z-index: 2;
+
+}
+
+
+
+.fuego {
+     position: absolute;
+z-index: -1;
+    visibility: hidden;
+    width: 1px;
+}
+.blob {
+     position: absolute;
+z-index: -1;
+    visibility: hidden;
+    width: 1px;
+	
+
+}
+
+.pacman {
+     position: absolute;
+width: 1px;
+visibility: hidden;
+
+z-index: -1;
+	
+
+}
+
+.gusanos {
+     position: absolute;
+width: 1px;
+z-index: -1;
+    visibility: hidden;
+	
+
+}
+
+.cuerpo {
+     position: absolute;
+width: 1px;
+z-index: -1;
+    visibility: hidden;
+	
+
+}
+
+.baile {
+     position: absolute;
+width: 1px;
+z-index: -1;
+    visibility: hidden;
+	
+
+}
+
+.esqueleto {
+     position: absolute;
+width: 1px;
+        visibility: hidden;
+
+z-index: -1;
+	
+
+}
+
+.tree {
+     position: absolute;
+width: 1px;
+z-index: -1;
+    visibility: hidden;
+		}
+		
+
+
+
+
+.link4 {
+ position: absolute;
+right: 0px;
+top: 48%;
+    left: 10%;
+ z-index: 2;
+}
+
+.link4 img {
+width: 70%;
+}
+
+
+.link5 {
+
+ overflow: hidden;
+ position: absolute;
+top: 54%;
+    left: 10%;
+
+ text-align: left;
+ z-index: 1;
+
+}
+
+
+.link5 img {
+    
+width: 60%;
+}
