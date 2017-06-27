@@ -1,6 +1,6 @@
 .bg
 {
-    background: transparent url('text.png') left top repeat;
+    background: transparent url('/text.png') left top repeat;
     background-size: 15px 15px;
     height: 795px;
     width: 795px;
