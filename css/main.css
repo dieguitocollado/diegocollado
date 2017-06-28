@@ -377,6 +377,15 @@ z-index: -1;
 
 }
 
+.netscape {
+     position: absolute;
+    left: 100%;
+    bottom: 0%;
+z-index: -1;
+	
+
+}
+
 .pacman {
      position: absolute;
     left: 150px;
