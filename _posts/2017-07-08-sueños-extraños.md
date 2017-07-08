@@ -5,7 +5,8 @@ categories: blog
 ---
 
 hey cuanto tiempo. Echaba de menos poner alguna basura cibernética por estos lares, pero el verano me está dejando así:
-![http://i.imgur.com/pHW7S4Br.jpg](grogui) 
+
+![grogui](http://i.imgur.com/pHW7S4Br.jpg) 
 
 Pero bueno, estos días he ido recopilando varios sueños extraños, encerrados en mi pequeña libreta. Ya los pasaré a aquí en algún momento.
 
