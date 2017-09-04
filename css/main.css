@@ -37,6 +37,43 @@
       color: red;
       font-weight: bold;
       font-family: "Comic Sans MS", "Comic Sans", cursive;
+      /* Chrome, Safari, Opera */
+     -webkit-animation: rainbow2 1s infinite;
+
+     /* Internet Explorer */
+     -ms-animation: rainbow2 1s infinite;
+
+     /* Standar Syntax */
+     animation: rainbow2 1s infinite;
+     }
+
+     /* Chrome, Safari, Opera */
+     @-webkit-keyframes rainbow2{
+     20%{color: red;}
+     40%{color: yellow;}
+     60%{color: green;}
+     80%{color: blue;}
+     100%{color: orange;}
+     }
+     /* Internet Explorer */
+     @-ms-keyframes rainbow2{
+     20%{color: red;}
+     40%{color: yellow;}
+     60%{color: green;}
+     80%{color: blue;}
+     100%{color: orange;}
+     }
+
+     /* Standar Syntax */
+     @keyframes rainbow2{
+     20%{color: red;}
+     40%{color: yellow;}
+     60%{color: green;}
+     80%{color: blue;}
+     100%{color: orange;}
+     }
+
+
 }
 
 .stars {
