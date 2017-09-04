@@ -28,15 +28,15 @@
 .frasemotivadora {
 
       position: absolute;
-      top: 80px;
+      top: 90px;
       text-align: center;
       font-size: 120%;
-      left: 520px;
+      left: 550px;
       pointer-events: none;
       width: 400px;
       color: red;
       font-weight: bold;
-      background: rgba(200, 54, 54, 0.3);
+      background: rgba(0, 0, 0, 0.3);
       font-family: "Comic Sans MS", "Comic Sans", cursive;
     }
 
