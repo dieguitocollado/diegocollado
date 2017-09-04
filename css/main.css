@@ -29,9 +29,11 @@
 
       position: absolute;
       top: 80px;
-      right: 0;
-      font-size: 100%;
-      color: blue;
+      right: 300px;
+      font-size: 150%;
+      color: red;
+      font-weight: bold;
+      font-family: "Comic Sans MS", "Comic Sans", cursive;
 }
 
 .stars {
@@ -373,8 +375,8 @@ a {
 	background-image: url("fire.gif-c200");
 	background-size: 80px;
 	background-repeat:repeat-x;
-z-index: -1;
 }
+
 .blob {
      position: absolute;
     left: 20px;
