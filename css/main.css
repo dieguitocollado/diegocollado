@@ -46,7 +46,7 @@
 
      /* Standar Syntax */
      animation: rainbow2 1s infinite;
-     }
+   }
 
      /* Chrome, Safari, Opera */
      @-webkit-keyframes rainbow2{
@@ -75,7 +75,7 @@
      }
 
 
-}
+
 
 .stars {
   background-image:
