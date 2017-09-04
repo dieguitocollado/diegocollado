@@ -29,8 +29,9 @@
 
       position: absolute;
       top: 80px;
-      right: 300px;
+      text-align: center;
       font-size: 150%;
+      width: 400px;
       color: red;
       font-weight: bold;
       font-family: "Comic Sans MS", "Comic Sans", cursive;
