@@ -7,7 +7,7 @@
   <title>diegocollado</title>
   <meta name="description" content="hola soy diego">
   <meta name="author" content="diego">
-	
+
 <!--[if IE]>
 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
@@ -24,7 +24,7 @@ sound[6]= "http://k003.kiwi6.com/hotlink/9tvcphh0pz/city.mp3"
 sound[7]= "http://k003.kiwi6.com/hotlink/upva6k3bmz/nothings.mp3"
 sound[8]= "http://k003.kiwi6.com/hotlink/ygqqmd10w1/redbone.mp3"
 sound[9]= "http://k003.kiwi6.com/hotlink/p65djz9z1u/enolagay.mp3"
-sound[10]= "http://k003.kiwi6.com/hotlink/snfy4owqzq/himno.mp3" 
+sound[10]= "http://k003.kiwi6.com/hotlink/snfy4owqzq/himno.mp3"
 
 function randomNumber(){
 var randomLooper = -1
@@ -35,7 +35,7 @@ return randomLooper
 var randomsub = randomNumber()
 var soundFile = sound[randomsub]
 document.write ('<audio loop autoplay><source src="' + soundFile + '" type="audio/mpeg">Your browser does not support the audio element.</audio>' )
-    
+
 function espacio() {
     var x = document.getElementById('space');
     if (x.style.display === 'none') {
@@ -44,6 +44,32 @@ function espacio() {
         x.style.display = 'none';
     }
 }
+</script>
+
+<script type="text/javascript">
+var frasesMotivadoras = 10
+var frase = new Array(frasesMotivadoras+1)
+frase[0]= "“Los sueños se realizan cuando mantienes el compromiso con ellos.”"
+frase[1]= "“Si tienes un sueño tienes que protegerlo. Las personas que no son capaces de hacer algo te dirán que tú tampoco puedes.” En busca de la felicidad"
+frase[2]= "“Muere lentamente quien no se atreve a abandonar lo seguro para luchar por sus sueños.” Jesús Quintero"
+frase[3]= "“Es probable que no lleguemos a nuestro destino si nos detenemos a arrojar piedras a cada perro que nos ladra.” Winston Churchill"
+frase[4]= "“La felicidad no es una estación de llegada, sino un modo de viajar.” M. Runbeck "
+frase[5]= "“Por muy larga que sea la tormenta, el sol siempre vuelve a brillar entre las nubes.” Khalil Gibran"
+frase[6]= "“La buena suerte se produce cuando la preparación se encuentra con la oportunidad.”"
+frase[7]= "“Detrás de los sueños siempre hay esfuerzos que la gente no ve.”"
+frase[8]= "“Conserva tus sueños, nunca sabes cuando te harán falta.” La sombra del viento"
+frase[9]= "“No abandones aquello en lo que pusiste tanto empeño, sudor y lágrimas. Estás herido, sin fuerza, da un paso más, obtén una recompensa por ello.”"
+frase[10]= ""Cuanto peor mejor para todos y cuanto peor para todos mejor, mejor para mí el suyo beneficio político""
+
+function randomNumber2(){
+var randomLooper2 = -1
+while (randomLooper2 < 0 || randomLooper2 > frasesMotivadoras || isNaN(randomLooper2)){ randomLooper2 = parseInt(Math.random()*(frasesMotivadoras+1))
+}
+return randomLooper2
+}
+var randomsub2 = randomNumber2()
+var fraseMotivadora = frase[randomsub2]
+document.write ('<div class="frasemotivadora">' + fraseMotivadora + '</div>' )
 </script>
 
 
@@ -55,7 +81,7 @@ function espacio() {
 </head>
 
 <body>
- 
+
 <body style="background-color:black;">
   <div id="space">
   <div class="stars"></div>
@@ -65,7 +91,7 @@ function espacio() {
   <div class="stars"></div>
 </div>
 <button onclick="espacio()">On/Off ESTRELLAS</button>
-    
+
 <div class="bg">
   <div class="gif">
     <img src="gif.gif" height="150">
@@ -77,7 +103,7 @@ function espacio() {
     <br>
     <br>
     <br>
-  
+
     <br>
     <br>
     <br>
@@ -100,7 +126,7 @@ function espacio() {
     <a class="link6" href="bbs.html"><img src="bbs.gif" height="70" ></a>
     </div>
 	<div class="fuego">
-	
+
 	</div>
 	<div class="blob">
 		<img src="blob.gif" height="180">
@@ -128,6 +154,6 @@ function espacio() {
 	</div>
 </div>
 
-</div>  
+</div>
 </body>
 </html>
