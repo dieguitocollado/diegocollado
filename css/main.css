@@ -372,9 +372,11 @@ a {
     bottom: 0px;
     height: 76px;
 	width: 793px;
-	background-image: url("fire.gif-c200");
+	background-image: url("http://diegocollado.net/fire.gif-c200");
 	background-size: 80px;
 	background-repeat:repeat-x;
+  z-index: -1;
+
 }
 
 .blob {
