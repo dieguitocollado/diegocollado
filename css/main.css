@@ -36,7 +36,7 @@
       width: 400px;
       color: red;
       font-weight: bold;
-      background: rgba(200, 54, 54, 0.5);
+      background: rgba(200, 54, 54, 0.3);
       font-family: "Comic Sans MS", "Comic Sans", cursive;
       /* Chrome, Safari, Opera */
      -webkit-animation: rainbow2 1s infinite;
@@ -405,6 +405,54 @@ a {
  }
 
 }
+
+.link7
+{
+
+  position: absolute;
+  z-index: 2;
+
+
+  text-align: right;
+  vertical-align: text-top;
+  position: absolute;
+    top: 60%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+
+ /* Starting position */
+ -webkit-transform:translateX(0%);
+ -moz-transform:translateX(0%);
+ transform:translateX(0%);
+ /* Apply animation to this element */
+ -moz-animation: link7 2s linear infinite alternate;
+ -webkit-animation: link7 2s linear infinite alternate;
+ animation: link7 2s linear infinite alternate;
+}
+/* Move it (define the animation) */
+@-moz-keyframes link7 {
+ 0%   { -moz-transform: translateX(0%); }
+ 100% { -moz-transform: translateX(-90%); }
+}
+@-webkit-keyframes link7 {
+ 0%   { -webkit-transform: translateX(0%); }
+ 100% { -webkit-transform: translateX(-90%); }
+}
+@keyframes link7 {
+ 0%   {
+ -moz-transform: translateX(0%); /* Browser bug fix */
+ -webkit-transform: translateX(0%); /* Browser bug fix */
+ transform: translateX(0%);
+ }
+ 100% {
+ -moz-transform: translateX(-90%); /* Browser bug fix */
+ -webkit-transform: translateX(-90%); /* Browser bug fix */
+ transform: translateX(-90%);
+ }
+
+}
+
 
 
 .fuego {
