@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Veritates</title>
+
+	<script>
+var gameScreen = $('#img-area')
+var newWidth = 120;
+var newHeight = 180;
+
+function spawnShip(game) {
+	var windowWidth = game.width()
+  var windowHeight = game.height()
+  var randWidth = Math.floor(Math.random() * windowWidth)
+  var randHeight = Math.floor(Math.random() * windowHeight)
+  
+  var ship = $(document.createElement('div'))
+  ship.addClass('attacking-door')
+  ship.css({
+    top: randHeight,
+    left: randWidth,
+    position: 'absolute'
+  })
+  ship.click(function() {
+  	this.remove()
+  })
+  
+  game.append(ship)
+  
+  ship.animate({
+    width: newWidth,
+    height: newHeight
+  }, 3000)
+}
+
+setInterval(function() {
+	spawnShip(gameScreen)
+}, 3000)
+</script>
+<style>
+.attacking-door {
+  position: relative;
+  height: 30px;
+  width: 20px;
+  background-color: #331a00;
+  border: 2px solid white;
+}
+
+#img-area {
+  width: 400px;
+  height: 400px;
+}
+</style>
+  </head>
+  <body>
+  
+<div class='game-container'>
+  <div id='img-area'>
+    <p class='lives'> </p>
+    <p class='score'> </p>
+  </div>
+</div> <!-- game container -->
+    <!-- page content -->
+  </body>
+</html>
