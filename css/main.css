@@ -539,7 +539,7 @@ a {
   vertical-align: text-top;
   position: absolute;
     top: 38%;
-    left: 62%;
+    left: 52%;
     margin-right: -50%;
     transform: translate(-50%, -50%)
 
@@ -548,9 +548,9 @@ a {
  -moz-transform:translateX(0%);
  transform:translateX(0%);
  /* Apply animation to this element */
- -moz-animation: link10 5s linear infinite alternate;
- -webkit-animation: link10 5s linear infinite alternate;
- animation: link10 5s linear infinite alternate;
+ -moz-animation: link10 3s linear infinite alternate;
+ -webkit-animation: link10 3s linear infinite alternate;
+ animation: link10 3s linear infinite alternate;
 }
 /* Move it (define the animation) */
 @-moz-keyframes link10 {
