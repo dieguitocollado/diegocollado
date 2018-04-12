@@ -1,0 +1,124 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>audito - diegocollado</title>
+  <meta name="description" content="audito">
+  <meta name="author" content="diego">
+
+  <link rel="stylesheet" type="text/css" href="http://csshake.surge.sh/csshake.min.css">
+
+
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+  <script src="http://code.jquery.com/jquery-1.7.2.min.js">
+  </script>
+ 
+  
+</head>
+
+<style>
+body {
+background: url(bgaudio.png);
+    background-size: 20px 20px;
+background-color: white;
+
+}
+
+
+div.a {
+
+ 
+position:fixed;
+    
+}
+
+
+div.b {
+
+position:fixed;
+    
+}
+div.c {
+width: 50px;
+height:50px;
+ visibility: hidden;
+position:fixed;
+    
+}
+
+</style>
+<body>
+<script>
+$(document).ready(function() {
+    animateDiv($('.a'));
+        animateDiv($('.b'));
+        animateDiv($('.c'));
+
+});
+
+function makeNewPosition($window) {
+
+    // Get viewport dimensions (remove the dimension of the div)
+    var h = $(window).height() - 50;
+    var w = $(window).height() - 50;
+
+    var nh = Math.floor(Math.random() * h);
+    var nw = Math.floor(Math.random() * w);
+
+    return [nh, nw];
+
+}
+
+function animateDiv($target) {
+    var newq = makeNewPosition($target.parent());
+    var oldq = $target.offset();
+    var speed = calcSpeed([oldq.top, oldq.left], newq);
+
+    $target.animate({
+        top: newq[0],
+        left: newq[1]
+    }, speed, function() {
+        animateDiv($target);
+    });
+
+};
+
+function calcSpeed(prev, next) {
+
+    var x = Math.abs(prev[1] - next[1]);
+    var y = Math.abs(prev[0] - next[0]);
+
+    var greatest = x > y ? x : y;
+
+    var speedModifier = 0.4;
+
+    var speed = Math.ceil(greatest / speedModifier);
+
+    return speed;
+
+}
+
+
+  
+  </script>
+<!-- and stops on :hover -->
+<div class='a'>
+<div class="shake-hard shake-constant shake-constant--hover">
+<a href="a1.mp3"><img src="audio.gif" height="60"></a>
+</div>
+</div>
+
+<div class='b'>
+<div class="shake-hard shake-constant shake-constant--hover">
+<a href="a2.mp3"><img src="audio.gif" height="70"></a>
+</div>
+</div>
+
+
+
+</body>
+</html>
