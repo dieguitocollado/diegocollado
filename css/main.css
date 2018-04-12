@@ -483,26 +483,26 @@ a {
 .link9
 {
 
-  position: absolute;
+    position: absolute;
   z-index: 2;
 
 
   text-align: right;
   vertical-align: text-top;
   position: absolute;
-    top: 40%;
-    left: 60%;
+    top: 20%;
+    left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%)
 
- /* Starting position */
+/* Starting position */
  -webkit-transform:translateX(0%);
  -moz-transform:translateX(0%);
  transform:translateX(0%);
  /* Apply animation to this element */
- -moz-animation: link9 3s linear infinite alternate;
- -webkit-animation: link9 3s linear infinite alternate;
- animation: link9 3s linear infinite alternate;
+ -moz-animation: link6 2s linear infinite alternate;
+ -webkit-animation: link6 2s linear infinite alternate;
+ animation: link6 2s linear infinite alternate;
 }
 /* Move it (define the animation) */
 @-moz-keyframes link9 {
@@ -513,7 +513,7 @@ a {
  0%   { -webkit-transform: translateX(0%); }
  100% { -webkit-transform: translateX(-90%); }
 }
-@keyframes link9{
+@keyframes link9 {
  0%   {
  -moz-transform: translateX(0%); /* Browser bug fix */
  -webkit-transform: translateX(0%); /* Browser bug fix */
