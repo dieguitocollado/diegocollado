@@ -551,7 +551,7 @@ a {
  -moz-animation: link10 3s linear infinite alternate;
  -webkit-animation: link10 3s linear infinite alternate;
  animation: link10 3s linear infinite alternate;
-}
+
 /* Move it (define the animation) */
 @-moz-keyframes link10 {
  0%   { -moz-transform: translateX(0%); }
