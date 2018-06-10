@@ -34,7 +34,7 @@ return randomLooper
 }
 var randomsub = randomNumber()
 var soundFile = sound[randomsub]
-document.write ('<audio loop autoplay><source src="' + soundFile + '" type="audio/mpeg">Your browser does not support the audio element.</audio>' )
+document.write ('<audio id="musicaWeb" muted loop autoplay><source src="' + soundFile + '" type="audio/mpeg">Your browser does not support the audio element.</audio>' )
 
 function espacio() {
     var x = document.getElementById('space');
@@ -43,6 +43,18 @@ function espacio() {
     } else {
         x.style.display = 'none';
     }
+}
+
+function toggleMute() {
+
+  var audio=document.getElementById("musicaWeb");
+
+  if(audio.muted){
+    audio.muted = false;
+  } else {
+    audio.muted = true;
+  }
+
 }
 </script>
 
@@ -104,6 +116,7 @@ document.write ('<div class="frasemotivadora">' + fraseMotivadora + '</div>' )
   <div class="stars"></div>
 </div>
 <button onclick="espacio()">On/Off ESTRELLAS</button>
+<button onclick="toggleMute()">On/Off MÚSICA</button>
 <br>
 <a href="http://diegocollado.net" title=""><img src="https://counter2.freecounter.ovh/private/contadorvisitasgratis.php?c=tq1rzxnlbyl8le3mwnj72u615bhar97w" border="0" title="" alt=""></a></noscript><a href="http://diegocollado.net" title=""><img src="https://counter2.freecounter.ovh/private/contadorvisitasgratis.php?c=tq1rzxnlbyl8le3mwnj72u615bhar97w" border="0" title="" alt=""></a>
 <div class="bg">
