@@ -397,7 +397,7 @@ a {
   vertical-align: text-top;
   position: absolute;
     top: 60%;
-    left: 50%;
+    left: 40%;
     margin-right: -50%;
     transform: translate(-50%, -50%)
 
@@ -413,11 +413,11 @@ a {
 /* Move it (define the animation) */
 @-moz-keyframes link7 {
  0%   { -moz-transform: translateX(0%); }
- 100% { -moz-transform: translateX(-90%); }
+ 100% { -moz-transform: translateX(-80%); }
 }
 @-webkit-keyframes link7 {
  0%   { -webkit-transform: translateX(0%); }
- 100% { -webkit-transform: translateX(-90%); }
+ 100% { -webkit-transform: translateX(-80%); }
 }
 @keyframes link7 {
  0%   {
@@ -426,9 +426,9 @@ a {
  transform: translateX(0%);
  }
  100% {
- -moz-transform: translateX(-90%); /* Browser bug fix */
- -webkit-transform: translateX(-90%); /* Browser bug fix */
- transform: translateX(-90%);
+ -moz-transform: translateX(-80%); /* Browser bug fix */
+ -webkit-transform: translateX(-80%); /* Browser bug fix */
+ transform: translateX(-80%);
  }
 
 }
